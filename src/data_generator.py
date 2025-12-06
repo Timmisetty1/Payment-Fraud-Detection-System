@@ -89,7 +89,6 @@ class TransactionDataGenerator:
         # Fraudulent transactions more likely to be international
         fraud_country_mask = np.random.random(n_fraud) < 0.4
         fraud_countries = np.random.choice(['CN', 'BR', 'IN'], size=np.sum(fraud_country_mask))
-        transaction_types_temp = transaction_types.copy()
         countries_list = list(countries)
         for i, mask_val in enumerate(fraud_country_mask):
             if mask_val and i < len(fraud_countries):
